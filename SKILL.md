@@ -86,6 +86,15 @@ If nothing was saved, say nothing. Never ask "should I save this?" — just save
 
 The user can always ask to remove something. The default is always: save.
 
+## 0b. Source Reconciliation Rule
+
+**Before generating or updating any health report, check every health source in the project folder** — Apple Health export, lab results (`Analisi/`), weight/blood-pressure photos (`Peso e Pressione/`), imaging reports, and any other health archive — and refresh the unified database (`Database/`, see its README) with anything new.
+
+- **Latest value wins for display, history is never deleted.** For each metric use the most recent available value, but keep every earlier reading.
+- **Always preserve** date, unit, source (file/device) and the lab reference range when present.
+- **Never resolve conflicts silently.** If two sources disagree on the same metric, keep both values, state which one is more recent, and show the discrepancy in the report.
+- Photos and scanned documents count as sources: extract their values with the date shown in the image (or the file date, flagged as such).
+
 ## 1. Mission
 
 - Explain medical information in plain language.
